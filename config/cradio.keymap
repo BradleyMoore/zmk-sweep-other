@@ -22,23 +22,16 @@
 
 // -----------------
 
-&mt {
-    // flavor = "tap-preferred";
-    // tapping_term_ms = <200>;
-};
-
-&sk { ignore-modifiers; };
-
 / {
     macros {
         // sometimes my device thinks a modifier is being held down
         // pressing all modifiers fixes it.
 
-        unstick: unstick {
-            label = "ZM_unstick";
+        Hyper: Hyper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+            bindings = <&kp LEFT_ALT &kp LCTRL &kp LSHIFT &kp LEFT_GUI>;
+            label = "HYPER";
         };
     };
 
@@ -47,20 +40,7 @@
 
         // both right thumb keys
         // internal-left & external-right thumb keys
-
-        combo_sym2 {
-            timeout-ms = <200>;
-            key-positions = <31 33>;
-            bindings = <&mo 5>;
-        };
-
         // both left thumb keys
-
-        combo_settings {
-            timeout-ms = <300>;
-            key-positions = <30 31>;
-            bindings = <&mo 6>;
-        };
     };
 
     behaviors {
@@ -91,6 +71,13 @@
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp RBKT>;
         };
+
+        Soft_Off_Both: Soft_Off_Both {
+            compatible = "zmk,behavior-soft-off";
+            label = "SOFT_OFF_BOTH";
+            #binding-cells = <0>;
+            split-peripheral-off-on-press;
+        };
     };
 
     keymap {
@@ -100,10 +87,10 @@
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T               &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G               &kp H      &kp J  &kp K      &kp L    &kp SEMI
-&kp Z  &kp X  &kp C  &kp V  &kp B               &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
-                     &mo 3  &mt LSHIFT SPACE    &kp SPACE  &sl 2
+&kp Q  &kp W  &kp E  &kp R  &kp T         &kp Y      &kp U       &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F  &kp G         &kp H      &kp J       &kp K      &kp L    &kp SEMI
+&kp Z  &kp X  &kp C  &kp V  &kp B         &kp N      &kp M       &kp COMMA  &kp DOT  &kp SLASH
+                     &none  &kp LSHIFT    &kp SPACE  &kp RETURN
             >;
         };
 
