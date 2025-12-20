@@ -46,13 +46,6 @@
         compatible = "zmk,combos";
 
         // both right thumb keys
-
-        combo_accent {
-            timeout-ms = <300>;
-            key-positions = <32 33>;
-            bindings = <&mo 0>;
-        };
-
         // internal-left & external-right thumb keys
 
         combo_sym2 {
@@ -123,7 +116,7 @@
             bindings = <
 &kp CARET  &kp UNDER  &kp HASH  &none     &kp HASH    &none  &none  &none  &none  &none
 &kp GRAVE  &kp TILDE  &kp BSLH  &kp PIPE  &kp AMPS    &none  &none  &none  &none  &none
-&none      &none      &none     &kp C     &none       &none  &none  &none  &none  &none
+&none      &none      &none     &none     &none       &none  &none  &none  &none  &none
                                 &none     &none       &none  &none
             >;
         };
