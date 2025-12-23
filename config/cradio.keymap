@@ -85,22 +85,26 @@
 
         // Base alpha layer
 
-        default_layer {
+        Letters {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T         &kp Y      &kp U       &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F  &kp G         &kp H      &kp J       &kp K      &kp L    &kp SEMI
-&kp Z  &kp X  &kp C  &kp V  &kp B         &kp N      &kp M       &kp COMMA  &kp DOT  &kp SLASH
-                     &none  &kp LSHIFT    &kp SPACE  &kp RETURN
+&kp Q  &kp W  &kp E  &kp R  &kp T         &kp Y        &kp U       &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F  &kp G         &kp H        &kp J       &kp K      &kp L    &kp SEMI
+&kp Z  &kp X  &kp C  &kp V  &kp B         &kp N        &kp M       &kp COMMA  &kp DOT  &kp SLASH
+                     &none  &kp LSHIFT    &lt 1 SPACE  &kp RETURN
             >;
+
+            label = "Letters";
         };
 
-        layer_6 {
+        Number {
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &none  &none         &none          &none      &none
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &none  &Parentheses  &Curly_Braces  &Brackets  &Inequalities
-&none   &none   &none   &none   &none     &none  &none         &none          &none      &none
-                        &mo 4   &mo 5     &none  &none
+&none  &kp N7        &kp N8        &kp N9        &none    &none  &none         &none          &none      &none
+&none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none    &none  &Parentheses  &Curly_Braces  &Brackets  &Inequalities
+&none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none    &none  &none         &trans         &trans     &none
+                                   &kp N0        &none    &none  &none
             >;
+
+            label = "Number";
         };
 
         sym_layer {
